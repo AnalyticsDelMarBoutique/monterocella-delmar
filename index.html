@@ -48,7 +48,7 @@ nav.scrolled {
 }
 .nav-logo {
   font-family: 'Playfair Display', serif;
-  font-size: 1rem;
+  font-size: 1.6vw;
   color: var(--white);
   letter-spacing: 0.06em;
   text-decoration: none;
@@ -60,7 +60,7 @@ nav ul { list-style: none; display: flex; gap: 2.5rem; align-items: center; }
 nav ul a {
   color: rgba(255,255,255,0.75);
   text-decoration: none;
-  font-size: 0.75rem;
+  font-size: 1.2vw;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 400;
@@ -69,7 +69,7 @@ nav ul a {
 nav.scrolled ul a { color: var(--muted); }
 nav ul a:hover { color: var(--gold); }
 .nav-cta {
-  font-size: 0.72rem !important;
+  font-size: 1.15vw !important;
   letter-spacing: 0.14em !important;
   color: var(--gold) !important;
   border-bottom: 1px solid var(--gold);
@@ -80,8 +80,8 @@ nav.scrolled .nav-cta { color: var(--gold) !important; }
 /* ─── HERO ─────────────────────────────────────── */
 .hero {
   position: relative;
-  height: 100vh; min-height: 700px;
-  display: flex; align-items: center; justify-content: center;
+  height: 100vh; max-height: 100vh;
+  display: flex; align-items: flex-start; justify-content: center;
   overflow: hidden;
 }
 .hero-bg {
@@ -101,25 +101,25 @@ nav.scrolled .nav-cta { color: var(--gold) !important; }
 .hero-content {
   position: relative; z-index: 2;
   text-align: center;
-  max-width: 780px;
-  padding: 0 2rem;
+  width: 80vw;
+  padding: 20vh 2vw 0;
 }
 .hero-eyebrow {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.96vw;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5vh;
   font-weight: 400;
 }
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(3rem, 6.5vw, 5.5rem);
+  font-size: 5.04vw;
   font-weight: 400;
   color: var(--white);
   line-height: 1.08;
-  margin-bottom: 1.75rem;
+  margin-bottom: 3vh;
   letter-spacing: -0.01em;
 }
 .hero-title em {
@@ -128,16 +128,19 @@ nav.scrolled .nav-cta { color: var(--gold) !important; }
   display: block;
 }
 .hero-sub {
-  font-size: 0.95rem;
+  font-size: 1.26vw;
   color: rgba(255,255,255,0.55);
   line-height: 1.85;
-  max-width: 480px;
-  margin: 0 auto 3rem;
+  width: 56vw;
+  margin: 0 auto 4vh;
   font-weight: 300;
 }
-.hero-actions { display: flex; gap: 3rem; justify-content: center; align-items: center; }
+.hero-actions { display: flex; gap: 3vw; justify-content: center; align-items: center; }
+.hero-widget { margin-top: 2.5vw; display: flex; justify-content: center; width: 100%; }
+#search-widget_IO312PWQ { display: flex; justify-content: center; }
+
 .btn-ghost {
-  font-size: 0.72rem;
+  font-size: 0.76vw;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--white);
@@ -149,22 +152,22 @@ nav.scrolled .nav-cta { color: var(--gold) !important; }
 }
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
 .btn-gold {
-  font-size: 0.72rem;
+  font-size: 0.82vw;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--ocean);
+  background: var(--gold);
   text-decoration: none;
-  font-weight: 400;
-  border-bottom: 1px solid var(--gold);
-  padding-bottom: 2px;
-  transition: opacity 0.2s;
+  font-weight: 500;
+  padding: 1vh 2vw;
+  transition: background 0.2s, opacity 0.2s;
 }
-.btn-gold:hover { opacity: 0.7; }
+.btn-gold:hover { opacity: 0.85; }
 .hero-scroll {
-  position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+  position: absolute; bottom: 7vh; left: 50%; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
-  color: rgba(255,255,255,0.35);
-  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  font-size: 0.78vw; letter-spacing: 0.2em; text-transform: uppercase;
   z-index: 2;
   animation: drift 3s ease-in-out infinite;
 }
@@ -205,6 +208,32 @@ nav.scrolled .nav-cta { color: var(--gold) !important; }
   width: 100%; height: 1px;
   background: var(--line);
   margin: 0;
+}
+
+/* ─── AWARDS BAR ─────────────────────────────────── */
+.awards-bar {
+  background: var(--white);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 1.75rem 5vw;
+  overflow: hidden;
+}
+.awards-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.awards-inner img {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-height: 104px;
+  width: auto;
+  object-fit: contain;
+  opacity: 1;
+  filter: none;
 }
 
 /* ─── AMENIDADES ─────────────────────────────────── */
@@ -604,7 +633,42 @@ footer {
 .fi.on { opacity: 1; transform: translateY(0); }
 
 /* ─── RESPONSIVE ──────────────────────────────── */
+/* ─── HAMBURGUESA ───────────────────────────────── */
+.nav-burger {
+  display: none; flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer; padding: 4px; z-index: 101;
+}
+.nav-burger span {
+  display: block; width: 24px; height: 1.5px;
+  background: var(--white); transition: all 0.3s;
+}
+nav.scrolled .nav-burger span { background: var(--text); }
+.nav-burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.nav-mobile {
+  display: none; position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(14,22,25,0.97);
+  z-index: 99; flex-direction: column;
+  justify-content: center; align-items: center;
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile ul {
+  list-style: none; display: flex; flex-direction: column;
+  align-items: center; gap: 2.5rem; padding: 0; margin: 0;
+}
+.nav-mobile ul a {
+  color: rgba(255,255,255,0.8); text-decoration: none;
+  font-size: 1.3rem; letter-spacing: 0.18em;
+  text-transform: uppercase; font-weight: 400; transition: color 0.2s;
+}
+.nav-mobile ul a:hover { color: var(--gold); }
+.nav-mobile .nav-cta { color: var(--gold) !important; border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
+
 @media (max-width: 960px) {
+  .nav-burger { display: flex; }
   nav ul { display: none; }
   nav { padding: 1.25rem 1.5rem; }
   .sec { padding: 5rem 1.5rem; }
@@ -631,7 +695,7 @@ footer {
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" class="nav-logo">by Del Mar <span>·</span> Monte Rocella</a>
+  <a href="#" class="nav-logo">Monte Rocella <span>·</span> by Del Mar</a>
   <ul>
     <li><a href="#amenidades">Amenidades</a></li>
     <li><a href="#alojamientos">Alojamientos</a></li>
@@ -639,7 +703,19 @@ footer {
     <li><a href="#del-mar">Del Mar</a></li>
     <li><a href="#reservar" class="nav-cta">Reservar</a></li>
   </ul>
+  <button class="nav-burger" id="navBurger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-mobile" id="navMobile">
+  <ul>
+    <li><a href="#amenidades">Amenidades</a></li>
+    <li><a href="#alojamientos">Alojamientos</a></li>
+    <li><a href="#experiencias">Experiencias</a></li>
+    <li><a href="#del-mar">Del Mar</a></li>
+    <li><a href="#reservar" class="nav-cta">Reservar</a></li>
+  </ul>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="inicio">
@@ -655,16 +731,27 @@ footer {
       <em>Una experiencia cuidadosamente operada.</em>
     </h1>
     <p class="hero-sub">Un destino donde el mar, el diseño y la hospitalidad se encuentran bajo un mismo estándar de calidad.</p>
-    <div class="hero-actions">
-      <a href="#reservar" class="btn-gold">Reservar ahora</a>
-      <a href="#amenidades" class="btn-ghost">Explorar destino</a>
+    <div class="hero-widget">
+      <div id="search-widget_IO312PWQ"><script>!function(e,t,a,n,c,r){function s(t){e.console.log("[Guesty Embedded Widget]:",t)}var i,d,l,o,y,m,g,h,p,u;n&&(i=n,d=t.getElementsByTagName("head")[0],(l=t.createElement("link")).rel="stylesheet",l.type="text/css",l.href=i,l.media="all",d.appendChild(l)),o=function(){try{e[a].create(r).catch(function(e){s(e.message)})}catch(e){s(e.message)}},h=!1,y=c,m=function(){h||this.readyState&&"complete"!=this.readyState||(h=!0,o())},(g=t.createElement("script")).type="text/javascript",g.src=y,g.async="true",g.onload=g.onreadystatechange=m,p=g,(u=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,u)}(window,document,"GuestySearchBarWidget","https://s3.amazonaws.com/guesty-frontend-production/search-bar-production.css","https://s3.amazonaws.com/guesty-frontend-production/search-bar-production.js",{"siteUrl":"delmar-monterocella.guestybookings.com","color":"#b8976a"});</script></div>
     </div>
   </div>
   <div class="hero-scroll">
-    <span>Descubrir</span>
-    <svg width="14" height="22" viewBox="0 0 14 22" fill="none"><path d="M7 3 L7 19 M2 14 L7 19 L12 14" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Explorar destino</span>
+    <svg width="17" height="26" viewBox="0 0 14 22" fill="none"><path d="M7 3 L7 19 M2 14 L7 19 L12 14" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
 </section>
+
+<!-- AWARDS BAR -->
+<div class="awards-bar">
+  <div class="awards-inner">
+    <img src="assets/award Airbnb.pdf.png" alt="Airbnb Award">
+    <img src="assets/award Airdna.png" alt="AirDNA Award">
+    <img src="assets/award H&amp;V.png" alt="H&amp;V Award" style="max-height:166px;">
+    <img src="assets/award ISO.png" alt="ISO Award">
+    <img src="assets/awards APAR.png" alt="APAR Award">
+    <img src="assets/ST awards.png" alt="ST Award">
+  </div>
+</div>
 
 <!-- AMENIDADES -->
 <section class="sec sec-alt fi" id="amenidades">
@@ -1063,7 +1150,7 @@ footer {
 <footer>
   <div class="ft-inner">
     <div>
-      <p class="ft-logo">by Del Mar <span>·</span> Monte Rocella</p>
+      <p class="ft-logo">Monte Rocella <span>·</span> by Del Mar</p>
       <p class="ft-tag">Un destino operado bajo estándares de hospitalidad, diseño y experiencia cuidadosamente establecidos.</p>
       <p class="ft-del">Operado por <strong>Del Mar</strong> · Hospitalidad para desarrollos inmobiliarios</p>
     </div>
@@ -1098,6 +1185,19 @@ footer {
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 50);
   }, { passive: true });
+
+  const burger = document.getElementById('navBurger');
+  const mobileNav = document.getElementById('navMobile');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    mobileNav.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
 
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } });
