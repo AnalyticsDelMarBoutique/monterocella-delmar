@@ -689,6 +689,26 @@ nav.scrolled .nav-burger span { background: var(--text); }
   footer { padding: 3rem 1.5rem 2rem; }
   .ft-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
+
+@media (max-width: 768px) {
+  .nav-logo { font-size: 5vw; }
+  .hero-content { width: 90vw; padding-top: 22vh; }
+  .hero-eyebrow { font-size: 2.2vw; letter-spacing: 0.1em; white-space: nowrap; }
+  .hero-title { font-size: 9vw; }
+  .hero-sub { font-size: 3.8vw; width: 82vw; }
+  .hero-scroll { font-size: 2.8vw; bottom: 18vh; }
+  .hero-widget { display: none; }
+  .hero-btn-mobile {
+    display: flex; justify-content: center; margin-top: 4vh;
+  }
+  .hero-btn-mobile a {
+    width: 60vw; padding: 1.4vh 0;
+    background: var(--gold); color: #fff;
+    text-align: center; text-decoration: none;
+    font-size: 3.8vw; letter-spacing: 0.16em;
+    text-transform: uppercase; font-weight: 500;
+  }
+}
 </style>
 </head>
 <body>
@@ -731,6 +751,9 @@ nav.scrolled .nav-burger span { background: var(--text); }
       <em>Una experiencia cuidadosamente operada.</em>
     </h1>
     <p class="hero-sub">Un destino donde el mar, el diseño y la hospitalidad se encuentran bajo un mismo estándar de calidad.</p>
+    <div class="hero-btn-mobile">
+      <a href="#alojamientos">Reservar ahora</a>
+    </div>
     <div class="hero-widget">
       <div id="search-widget_IO312PWQ"><script>!function(e,t,a,n,c,r){function s(t){e.console.log("[Guesty Embedded Widget]:",t)}var i,d,l,o,y,m,g,h,p,u;n&&(i=n,d=t.getElementsByTagName("head")[0],(l=t.createElement("link")).rel="stylesheet",l.type="text/css",l.href=i,l.media="all",d.appendChild(l)),o=function(){try{e[a].create(r).catch(function(e){s(e.message)})}catch(e){s(e.message)}},h=!1,y=c,m=function(){h||this.readyState&&"complete"!=this.readyState||(h=!0,o())},(g=t.createElement("script")).type="text/javascript",g.src=y,g.async="true",g.onload=g.onreadystatechange=m,p=g,(u=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,u)}(window,document,"GuestySearchBarWidget","https://s3.amazonaws.com/guesty-frontend-production/search-bar-production.css","https://s3.amazonaws.com/guesty-frontend-production/search-bar-production.js",{"siteUrl":"delmar-monterocella.guestybookings.com","color":"#b8976a"});</script></div>
     </div>
