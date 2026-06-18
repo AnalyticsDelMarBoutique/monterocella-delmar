@@ -457,10 +457,22 @@ nav.scrolled .nav-cta { color: var(--gold) !important; }
   width: 50%; height: 100%;
   background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(184,151,106,0.06) 0%, transparent 70%);
   pointer-events: none;
+  z-index: 0;
+}
+.del-mar-watermark {
+  position: absolute;
+  right: 3rem;
+  bottom: 3rem;
+  width: 220px;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
 }
 .dm-inner {
   max-width: 1080px; margin: 0 auto;
   display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+  position: relative;
+  z-index: 1;
 }
 .dm-eyebrow {
   font-size: 0.68rem;
@@ -712,6 +724,7 @@ nav.scrolled .nav-burger span { background: var(--text); }
   .exp-item:nth-child(4) { border-bottom: 1px solid var(--line); }
   .dm-inner { grid-template-columns: 1fr; gap: 3.5rem; }
   .del-mar-sec { padding: 5rem 1.5rem; }
+  .del-mar-watermark { width: 140px; right: 1.5rem; bottom: 1.5rem; }
   .destinos-grid { grid-template-columns: 1fr 1fr; }
   .ft-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   footer { padding: 3rem 1.5rem 2rem; }
@@ -964,9 +977,8 @@ nav.scrolled .nav-burger span { background: var(--text); }
 <section class="sec sec-alt fi" id="experiencias">
   <div class="sec-inner">
     <span class="eyebrow">Vive el destino</span>
-    <h2 class="sec-title">Más allá de tu alojamiento,<br><em>la Baja te espera</em></h2>
-    <div class="rule"></div>
-    <p class="sec-body">Desde la puerta de Monte Rocella, el destino abre sus posibilidades. Reserva experiencias, tours y restaurantes directamente.</p>
+    <h2 class="sec-title">Tu estadía no termina en la puerta.</h2>
+    <p class="sec-body">Elevamos cada momento con una cartera de experiencias y servicios seleccionados para completar tu viaje — todo en un mismo lugar.</p>
 
     <div class="exp-grid">
       <a href="#" class="exp-item">
@@ -1036,7 +1048,7 @@ nav.scrolled .nav-burger span { background: var(--text); }
     </div>
 
     <a href="#" class="lb-link">
-      Explorar todas las experiencias en Local Bird
+      Explorar todas las experiencias
       <svg width="12" height="12" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 7 L12 7 M8 3 L12 7 L8 11"/></svg>
     </a>
   </div>
@@ -1050,6 +1062,7 @@ nav.scrolled .nav-burger span { background: var(--text); }
 </div>
 <!-- OPERADO POR DEL MAR -->
 <section class="del-mar-sec fi" id="del-mar">
+  <img src="assets/logo-delmar (1).png" alt="Del Mar watermark" class="del-mar-watermark">
   <div class="dm-inner">
     <div>
       <span class="dm-eyebrow">El estándar que nos define</span>
