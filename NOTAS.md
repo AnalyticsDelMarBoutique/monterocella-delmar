@@ -24,17 +24,18 @@ One-pager web para Monte Rocella. El objetivo es:
 ## Estructura de la página (de arriba hacia abajo)
 1. Hero — foto atardecer alberca, frase principal
 2. Barra de reconocimientos — 6 sellos de Del Mar
-3. Amenidades — galería de fotos + grid de 7 amenidades
-4. Alojamientos — 3 unidades con fotos reales + banner lifestyle
-5. Vive el destino — 6 experiencias conectadas a Local Bird
-6. Operado por Del Mar — sección oscura, construye marca
-7. Tu lugar aquí te está esperando — CTA emocional + cosquillita inversión
-8. Otros destinos Modelo House — 4 destinos discretos al final
-9. Footer
+3. Amenidades — propósito: enamorar del desarrollo
+4. Alojamientos — propósito: que eligan y reserven su habitación, conectado a la plataforma de guesty
+5. Ventajas de reservar directo
+6. Vive el destino — propósito: que eligan experiencias que complementen su viaje, conectado a la plataforma de localbird
+7. Operado por Del Mar — sección oscura, construye marca
+8. Tu lugar aquí te está esperando — CTA emocional + cosquillita inversión
+9. Otros destinos Modelo House — 4 destinos discretos al final
+10. Footer
 
 ## Archivos importantes
 - `index.html` — toda la página en un solo archivo
-- `assets/badges/` — 6 logos de reconocimientos PNG con fondo transparente
+- `assets/ — logos de reconocimientos PNG con fondo transparente
 
 ## Integraciones pendientes
 - Guesty — reservas en tiempo real (sección alojamientos)
