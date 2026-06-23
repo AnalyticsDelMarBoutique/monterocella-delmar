@@ -48,7 +48,7 @@ nav.scrolled {
 }
 .nav-logo {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6vw;
+  font-size: 1.2vw;
   color: var(--white);
   letter-spacing: 0.06em;
   text-decoration: none;
@@ -56,11 +56,11 @@ nav.scrolled {
 }
 .nav-logo span { color: var(--gold); margin: 0 0.3em; }
 nav.scrolled .nav-logo { color: var(--text); }
-nav ul { list-style: none; display: flex; gap: 2.5rem; align-items: center; }
+nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
 nav ul a {
   color: rgba(255,255,255,0.75);
   text-decoration: none;
-  font-size: 1.2vw;
+  font-size: 1.05vw;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 400;
@@ -278,7 +278,7 @@ nav.scrolled .nav-cta { color: var(--gold) !important; }
 .awards-inner img {
   flex: 0 1 auto;
   min-width: 0;
-  max-height: 104px;
+  max-height: 120px;
   width: auto;
   object-fit: contain;
   opacity: 1;
@@ -713,7 +713,7 @@ nav.scrolled .nav-burger span { background: var(--text); }
 }
 .nav-mobile ul a {
   color: rgba(255,255,255,0.8); text-decoration: none;
-  font-size: 1.3rem; letter-spacing: 0.18em;
+  font-size: 1.105rem; letter-spacing: 0.18em;
   text-transform: uppercase; font-weight: 400; transition: color 0.2s;
 }
 .nav-mobile ul a:hover { color: var(--gold); }
@@ -740,12 +740,13 @@ nav.scrolled .nav-burger span { background: var(--text); }
   .destinos-grid { grid-template-columns: 1fr 1fr; }
   .ft-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   footer { padding: 3rem 1.5rem 2rem; }
+  .ft-col { display: none; }
   .ft-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 
 @media (max-width: 768px) {
   html, body { width: 100%; min-width: 100%; overflow-x: hidden; }
-  .nav-logo { font-size: 5vw; }
+  .nav-logo { font-size: 4.25vw; }
   .hero-content { width: 100%; max-width: 100%; padding: 22vh 1.5rem 0; }
   .hero-eyebrow { font-size: 2.2vw; letter-spacing: 0.1em; white-space: nowrap; }
   .hero-title { font-size: 9vw; }
@@ -768,9 +769,9 @@ nav.scrolled .nav-burger span { background: var(--text); }
   .awards-inner img { max-height: 84px; width: auto; flex: 0 1 auto; margin: 0; padding: 0; }
   /* Force override for H&V inline size: shrink more and compress horizontally */
   .awards-inner img[alt="H&amp;V Award"], .awards-inner img:nth-child(3) {
-    max-height: 70px !important;
+    max-height: 92px !important;
     width: auto !important;
-    margin-left: 0 !important; margin-right: 0 !important;
+    margin-left: -0.3rem !important; margin-right: -0.3rem !important;
     padding-left: 0 !important; padding-right: 0 !important;
     display: block;
     object-fit: contain;
@@ -965,7 +966,7 @@ nav.scrolled .nav-burger span { background: var(--text); }
   <div class="awards-inner">
     <img src="assets/award Airbnb.pdf.png" alt="Airbnb Award">
     <img src="assets/award Airdna.png" alt="AirDNA Award">
-    <img src="assets/award H&amp;V.png" alt="H&amp;V Award" style="max-height:166px;">
+    <img src="assets/award H&amp;V.png" alt="H&amp;V Award" style="max-height:191px;">
     <img src="assets/award ISO.png" alt="ISO Award">
     <img src="assets/awards APAR.png" alt="APAR Award">
     <img src="assets/ST awards.png" alt="ST Award">
