@@ -330,7 +330,8 @@ nav.scrolled .nav-cta { color: var(--gold) !important; }
 }
 .amen-block.reverse { flex-direction: row-reverse; }
 @media (max-width: 960px) {
-  .amen-block { flex-direction: column; height: auto; }
+  .amen-block,
+  .amen-block.reverse { flex-direction: column; height: auto; }
   .amen-block .amen-img { flex: 0 0 auto; height: 220px; }
 }
 
@@ -743,23 +744,43 @@ nav.scrolled .nav-burger span { background: var(--text); }
 }
 
 @media (max-width: 768px) {
+  html, body { width: 100%; min-width: 100%; overflow-x: hidden; }
   .nav-logo { font-size: 5vw; }
-  .hero-content { width: 90vw; padding-top: 22vh; }
+  .hero-content { width: 100%; max-width: 100%; padding: 22vh 1.5rem 0; }
   .hero-eyebrow { font-size: 2.2vw; letter-spacing: 0.1em; white-space: nowrap; }
   .hero-title { font-size: 9vw; }
-  .hero-sub { font-size: 3.8vw; width: 82vw; }
+  .hero-sub { font-size: 3.8vw; width: 100%; max-width: 94vw; margin: 0 auto 4vh; }
   .hero-scroll { font-size: 2.8vw; bottom: 18vh; }
   .hero-widget { display: none; }
+  /* Keep amen-features as 3 columns on narrow screens so icons form two rows */
+  .amen-features { grid-template-columns: repeat(3,1fr); gap: 0.25rem; }
   .hero-btn-mobile {
     display: flex; justify-content: center; margin-top: 4vh;
   }
   .hero-btn-mobile a {
-    width: 60vw; padding: 1.4vh 0;
+    width: min(100%, 80vw); max-width: 100%; padding: 1.4vh 0;
     background: var(--gold); color: #fff;
     text-align: center; text-decoration: none;
     font-size: 3.8vw; letter-spacing: 0.16em;
     text-transform: uppercase; font-weight: 500;
   }
+  .awards-inner { flex-wrap: nowrap; justify-content: center; gap: 0.6rem; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .awards-inner img { max-height: 84px; width: auto; flex: 0 1 auto; margin: 0; padding: 0; }
+  /* Force override for H&V inline size: shrink more and compress horizontally */
+  .awards-inner img[alt="H&amp;V Award"], .awards-inner img:nth-child(3) {
+    max-height: 70px !important;
+    width: auto !important;
+    margin-left: 0 !important; margin-right: 0 !important;
+    padding-left: 0 !important; padding-right: 0 !important;
+    display: block;
+    object-fit: contain;
+    transform: scaleX(0.88);
+  }
+  .destinos-grid { grid-template-columns: 1fr; }
+  /* Ensure amen-block images display correctly on mobile */
+  .amen-block,
+  .amen-block.reverse { flex-direction: column; height: auto; }
+  .amen-block .amen-img { background-size: cover !important; background-position: center !important; height: 220px !important; flex: 0 0 auto; }
 }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
@@ -774,7 +795,8 @@ nav.scrolled .nav-burger span { background: var(--text); }
     <li><a href="#alojamientos">Alojamientos</a></li>
     <li><a href="#experiencias">Experiencias</a></li>
     <li><a href="#del-mar">Del Mar</a></li>
-    <li><a href="#reservar" class="nav-cta">Reservar</a></li>
+    <li><a href="#reservar">INVERSIÓN</a></li>
+    <li><a href="https://delmar-monterocella.guestybookings.com/en/properties?minOccupancy=1&adults=1" class="nav-cta">Reservar</a></li>
   </ul>
   <button class="nav-burger" id="navBurger" aria-label="Menú">
     <span></span><span></span><span></span>
@@ -786,6 +808,7 @@ nav.scrolled .nav-burger span { background: var(--text); }
     <li><a href="#alojamientos">Alojamientos</a></li>
     <li><a href="#experiencias">Experiencias</a></li>
     <li><a href="#del-mar">Del Mar</a></li>
+    <li><a href="#reservar">INVERSIÓN</a></li>
     <li><a href="#reservar" class="nav-cta">Reservar</a></li>
   </ul>
 </div>
@@ -911,7 +934,7 @@ nav.scrolled .nav-burger span { background: var(--text); }
               <p style="font-size:9px;color:#AEACA7;letter-spacing:0.1em;margin-bottom:2px;text-transform:uppercase;">Desde</p>
               <p style="font-family:'Playfair Display',serif;font-size:17px;color:#16323F;">$3,200 <span style="font-family:Inter,sans-serif;font-size:10px;color:#AEACA7;font-weight:300;">MXN / noche</span></p>
             </div>
-            <a href="#" style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#16323F;text-decoration:none;border-bottom:1px solid #B8976A;padding-bottom:2px;font-weight:500;">Ver fechas</a>
+            <a href="https://delmar-monterocella.guestybookings.com/en/properties" style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#16323F;text-decoration:none;border-bottom:1px solid #B8976A;padding-bottom:2px;font-weight:500;">Ver fechas</a>
           </div>
         </div>
       </div>
@@ -939,7 +962,7 @@ nav.scrolled .nav-burger span { background: var(--text); }
               <p style="font-size:9px;color:#AEACA7;letter-spacing:0.1em;margin-bottom:2px;text-transform:uppercase;">Desde</p>
               <p style="font-family:'Playfair Display',serif;font-size:17px;color:#16323F;">$5,800 <span style="font-family:Inter,sans-serif;font-size:10px;color:#AEACA7;font-weight:300;">MXN / noche</span></p>
             </div>
-            <a href="#" style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#16323F;text-decoration:none;border-bottom:1px solid #B8976A;padding-bottom:2px;font-weight:500;">Ver fechas</a>
+            <a href="https://delmar-monterocella.guestybookings.com/en/properties" style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#16323F;text-decoration:none;border-bottom:1px solid #B8976A;padding-bottom:2px;font-weight:500;">Ver fechas</a>
           </div>
         </div>
       </div>
@@ -967,7 +990,7 @@ nav.scrolled .nav-burger span { background: var(--text); }
               <p style="font-size:9px;color:#AEACA7;letter-spacing:0.1em;margin-bottom:2px;text-transform:uppercase;">Desde</p>
               <p style="font-family:'Playfair Display',serif;font-size:17px;color:#16323F;">$14,500 <span style="font-family:Inter,sans-serif;font-size:10px;color:#AEACA7;font-weight:300;">MXN / noche</span></p>
             </div>
-            <a href="#" style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#16323F;text-decoration:none;border-bottom:1px solid #B8976A;padding-bottom:2px;font-weight:500;">Ver fechas</a>
+            <a href="https://delmar-monterocella.guestybookings.com/en/properties" style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#16323F;text-decoration:none;border-bottom:1px solid #B8976A;padding-bottom:2px;font-weight:500;">Ver fechas</a>
           </div>
         </div>
       </div>
