@@ -776,11 +776,76 @@ nav.scrolled .nav-burger span { background: var(--text); }
     object-fit: contain;
     transform: scaleX(0.88);
   }
-  .destinos-grid { grid-template-columns: 1fr; }
+  .destinos-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: scroll !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 12px !important;
+    padding-bottom: 1rem !important;
+    background: transparent !important;
+    margin-top: 2rem !important;
+    scrollbar-width: none !important;
+  }
+  .destinos-grid::-webkit-scrollbar { display: none !important; }
+  .dest-card {
+    min-width: 75vw !important;
+    max-width: 75vw !important;
+    scroll-snap-align: center !important;
+    flex-shrink: 0 !important;
+  }
+  .dest-arrow { display: none; }
+  .dest-arrow.dest-prev,
+  .dest-arrow.dest-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 160px;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255,255,255,0.92);
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #16323F;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.18);
+  }
+  .dest-prev { left: 6px; }
+  .dest-next { right: 6px; }
   /* Ensure amen-block images display correctly on mobile */
   .amen-block,
   .amen-block.reverse { flex-direction: column; height: auto; }
   .amen-block .amen-img { background-size: cover !important; background-position: center !important; height: 220px !important; flex: 0 0 auto; }
+
+  /* Ventajas: 3+2 grid layout */
+  .ben-section { padding: 1.25rem 0.75rem; margin: 2rem 1rem 0; }
+  .ben-title { margin-bottom: 0.1rem; }
+  .ben-grid { grid-template-columns: repeat(6, 1fr); }
+  .ben-item {
+    grid-column: span 2;
+    padding: 1rem 0.4rem;
+    border-right: 1px solid #E8D9C4;
+    border-bottom: 1px solid #E8D9C4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .ben-item:nth-child(3) { border-right: none; }
+  .ben-item:nth-child(4),
+  .ben-item:nth-child(5) {
+    grid-column: span 3;
+    border-bottom: none;
+  }
+  .ben-item:nth-child(5) { border-right: none; }
+  .ben-icon { margin-bottom: 0.5rem; }
+  .ben-icon svg { width: 26px; height: 26px; }
+  .ben-text { font-size: 8px; letter-spacing: 0.08em; }
 }
 
 .aloj-arrow { display: none; }
@@ -1241,7 +1306,9 @@ nav.scrolled .nav-burger span { background: var(--text); }
     <div class="rule"></div>
     <p class="sec-body">Cuando una marca opera bien un destino, lo replica. Estos son los lugares donde Del Mar gestiona propiedades bajo el modelo by Del Mar.</p>
 
-    <div class="destinos-grid">
+    <div id="dest-carousel-wrap" style="position:relative;">
+    <button class="dest-arrow dest-prev" aria-label="Anterior"><i class="ti ti-chevron-left"></i></button>
+    <div class="destinos-grid" id="dest-carousel">
       <a href="#" class="dest-card">
         <div class="dest-img"><div class="dest-img-inner d-cabos"></div></div>
         <div class="dest-body">
@@ -1286,6 +1353,8 @@ nav.scrolled .nav-burger span { background: var(--text); }
           </div>
         </div>
       </a>
+    </div>
+    <button class="dest-arrow dest-next" aria-label="Siguiente"><i class="ti ti-chevron-right"></i></button>
     </div>
   </div>
 </section>
@@ -1377,6 +1446,33 @@ nav.scrolled .nav-burger span { background: var(--text); }
     requestAnimationFrame(function() {
       carousel.scrollLeft = cards[1].offsetLeft;
     });
+  })();
+
+  (function() {
+    var prev = document.querySelector('.dest-prev');
+    var next = document.querySelector('.dest-next');
+    var carousel = document.getElementById('dest-carousel');
+    if (!prev || !next || !carousel) return;
+    var cards = Array.prototype.slice.call(carousel.querySelectorAll(':scope > .dest-card'));
+    var total = cards.length;
+
+    function getCurrent() {
+      var scrollLeft = carousel.scrollLeft;
+      var idx = 0, minDist = Infinity;
+      cards.forEach(function(card, i) {
+        var dist = Math.abs(card.offsetLeft - scrollLeft);
+        if (dist < minDist) { minDist = dist; idx = i; }
+      });
+      return idx;
+    }
+
+    function goTo(index) {
+      var i = (index + total) % total;
+      carousel.scrollTo({ left: cards[i].offsetLeft, behavior: 'smooth' });
+    }
+
+    prev.addEventListener('click', function() { goTo(getCurrent() - 1); });
+    next.addEventListener('click', function() { goTo(getCurrent() + 1); });
   })();
 </script>
 </body>
